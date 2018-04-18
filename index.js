@@ -1,26 +1,17 @@
-// happens once
 function setup() {
   createCanvas(800, 600);
+  background("rgba(221, 251, 255, 0.8)");
 }
 
-// in a loop
-function draw() {
-  background(232, 251, 255);
-
-  fill(195, 234, 190);
-  // ellipse(fish, mouseY, 100, 100);
-  // cone(40, 70);
-
-  // fish = fish + 1;
-  fish();
+// event for randomized flowers
+function mouseClicked(event) {
+  var flowers = random([flowerOne, flowerTwo, flowerThree, flowerFour]);
+  flowers(event.clientX, event.clientY);
 }
-
-// event
-function mousePressed() {}
 
 function fish() {
-  fill(252, 152, 90);
-  noStroke();
+  fill(255, 187, 145);
+  stroke(255, 177, 130);
 
   //head
   push();
@@ -88,9 +79,10 @@ function fish() {
   pop();
 }
 
-function flowerOne() {
+function flowerOne(locationX, locationY) {
   // flower base
-  translate(mouseX, mouseY);
+  translate(locationX, locationY);
+  noStroke();
   fill(177, 214, 185);
   for (var i = 0; i < 10; i++) {
     ellipse(0, 10, 20, 60);
@@ -110,9 +102,9 @@ function flowerOne() {
   ellipse(0, 0, 15, 15);
 }
 
-function flowerTwo() {
+function flowerTwo(locationX, locationY) {
   // flowerbase
-  translate(200, 200); // change to mouseX, mouseY
+  translate(locationX, locationY);
   noStroke();
   fill(160, 193, 167);
   for (var i = 0; i < 10; i++) {
@@ -133,9 +125,9 @@ function flowerTwo() {
   ellipse(0, 0, 15, 15);
 }
 
-function flowerThree() {
+function flowerThree(locationX, locationY) {
   // flowerbase
-  translate(250, 250); // change to mouseX, mouseY
+  translate(locationX, locationY);
   noStroke();
   fill(175, 221, 184);
   for (var i = 0; i < 10; i++) {
@@ -156,9 +148,9 @@ function flowerThree() {
   ellipse(0, 0, 15, 15);
 }
 
-function flowerFour() {
+function flowerFour(locationX, locationY) {
   // flowerbase
-  translate(230, 230); // change to mouseX, mouseY
+  translate(locationX, locationY);
   noStroke();
   fill(118, 140, 82);
   for (var i = 0; i < 10; i++) {
