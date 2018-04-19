@@ -2,13 +2,24 @@ var drawnFlowers = [];
 var x, y, m, n, s;
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
   frameRate(60);
   x = 0;
   y = 0;
   m = 0;
   n = 0;
   s = 1;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+function mousePressed() {
+  if (mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseY < 100) {
+    var fs = fullscreen();
+    fullscreen(!fs);
+  }
 }
 
 // in a loop
@@ -24,11 +35,12 @@ function draw() {
     drawnFlowers[i].display();
     pop();
   }
+
   push();
   m = m + random(1, 0) * s;
   n = n + random(0, -1) * s;
   translate(m, n);
-  fish();
+  fish(translate(150, 150), rotate(radians(frameCount)));
   pop();
   if (m < -200) {
     m = -200;
