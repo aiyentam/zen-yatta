@@ -1,8 +1,14 @@
 var drawnFlowers = [];
-// var swimmingfish;
+var x, y, m, n, s;
 
 function setup() {
   createCanvas(800, 600);
+  frameRate(60);
+  x = 0;
+  y = 0;
+  m = 0;
+  n = 0;
+  s = 1;
 }
 
 // in a loop
@@ -12,10 +18,31 @@ function draw() {
 
   for (var i = 0; i < drawnFlowers.length; i++) {
     push();
+    x = x + random(-0.25, 0.25);
+    y = y + random(-0.25, 0.25);
+    translate(x, y);
     drawnFlowers[i].display();
     pop();
   }
+  push();
+  m = m + random(1, 0) * s;
+  n = n + random(0, -1) * s;
+  translate(m, n);
   fish();
+  pop();
+  if (m < -200) {
+    m = -200;
+    s = random(-1, 1);
+  } else if (m > 200) {
+    m = -200;
+    s = random(-1, 1);
+  } else if (n < 0) {
+    n = 0;
+    s = random(-1, 1);
+  } else if (n > 800) {
+    n = 0;
+    s = random(-1, 1);
+  }
 }
 
 function mouseClicked(event) {
@@ -26,13 +53,9 @@ function mouseClicked(event) {
       shouldCreate = false;
       flower = drawnFlowers[i];
       drawnFlowers.splice(i, 1);
-      console.log("Flowers in array: ");
-      console.log(drawnFlowers);
     }
   }
   if (shouldCreate) {
-    console.log("Not clicked. shouldCreate: " + shouldCreate);
-
     var color1 = random(255);
     var color2 = random(255);
     var color3 = random(255);
@@ -46,20 +69,5 @@ function mouseClicked(event) {
     );
     drawnFlowers.push(flower);
     redraw();
-    console.log("Flowers in array: ");
-    console.log(drawnFlowers);
   }
 }
-
-// swimmingfish.velocity.x = (mouseX - swimmingfish.position.x) / 10;
-// swimmingfish.velocity.y = (mouseY - swimmingfish.position.y) / 10;
-
-// swimmingfish.draw = function() {
-//   push();
-//   rotate(radians(this.getDirection()));
-//   fish(0, 0, 100 + this.getSpeed(), 100 - this.getSpeed());
-//   pop();
-// };
-// swimmingfish.maxSpeed = 10;
-
-// fish();

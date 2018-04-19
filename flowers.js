@@ -8,7 +8,6 @@ class Flower {
   }
 
   display() {
-    // flower base
     translate(this.locationX, this.locationY);
     noStroke();
     fill(177, 214, 185);
@@ -17,7 +16,6 @@ class Flower {
       rotate(PI / 5);
     }
 
-    // flower top
     noStroke();
     fill(this.color1, this.color2, this.color3);
     for (var i = 0; i < 10; i++) {
@@ -25,7 +23,6 @@ class Flower {
       rotate(PI / 4);
     }
 
-    //flower bud
     fill(246, 252, 164);
     ellipse(0, 0, 15, 15);
   }
@@ -43,6 +40,4 @@ class Flower {
       return false;
     }
   }
-
-  move() {}
 }
