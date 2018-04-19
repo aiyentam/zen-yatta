@@ -40,7 +40,12 @@ function draw() {
   m = m + random(1, 0) * s;
   n = n + random(0, -1) * s;
   translate(m, n);
-  fish(translate(150, 150), rotate(radians(frameCount)));
+  fish();
+  fish(translate(550, 550), rotate(radians(frameCount)));
+  fish(translate(525, 550), rotate(radians(frameCount)));
+  fish(translate(500, 550), rotate(radians(frameCount)));
+  fish(translate(475, 550), rotate(radians(frameCount)));
+  fish(translate(450, 550), rotate(radians(frameCount)));
   pop();
   if (m < -200) {
     m = -200;
