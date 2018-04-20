@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/aiyentam/zen-yatta/issues"
   },
-  "homepage": "https://github.com/aiyentam/zen-yatta#readme"
+  "homepage": "https://github.com/aiyentam/zen-yatta#readme",
+  "dependencies": {
+    "surge": "^0.20.1"
+  }
 }
