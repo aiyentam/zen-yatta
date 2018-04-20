@@ -1,5 +1,10 @@
 var drawnFlowers = [];
 var a, b, c, d, x, y, m, n, s;
+var blop;
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -15,15 +20,12 @@ function setup() {
   s = 1;
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-
 function mousePressed() {
   if (mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseY < 100) {
     var fs = fullscreen();
     fullscreen(!fs);
   }
+  blop = loadSound("/library/sounds/blop.mp3");
 }
 
 // in a loop
