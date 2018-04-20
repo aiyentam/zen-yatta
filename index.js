@@ -25,7 +25,6 @@ function mousePressed() {
     var fs = fullscreen();
     fullscreen(!fs);
   }
-  blop = loadSound("/library/sounds/blop.mp3");
 }
 
 // in a loop
@@ -166,4 +165,5 @@ function mouseClicked(event) {
     drawnFlowers.push(flower);
     redraw();
   }
+  blop.play();
 }
