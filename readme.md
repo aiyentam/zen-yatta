@@ -16,6 +16,10 @@ Listen to the waves as the fish swims around.
 You can add or delete flowers by clicking!
 (Each flower is a different color!)
 
+\*\* if the display is too small! you can left-click on the top left corner to maximize your screen!
+
+\*\* if you want to exit our your maxed screen, left-click on the top left corner.
+
 ### Next Batch!
 
 * User will be able to feed the koi fish.
