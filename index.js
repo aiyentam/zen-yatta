@@ -1,9 +1,13 @@
 var drawnFlowers = [];
-var x, y, m, n, s;
+var a, b, c, d, x, y, m, n, s;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(60);
+  a = 1;
+  b = 2;
+  c = 3;
+  d = 4;
   x = 0;
   y = 0;
   m = 0;
@@ -40,13 +44,62 @@ function draw() {
   m = m + random(1, 0) * s;
   n = n + random(0, -1) * s;
   translate(m, n);
-  fish();
-  fish(translate(550, 550), rotate(radians(frameCount)));
-  fish(translate(525, 550), rotate(radians(frameCount)));
-  fish(translate(500, 550), rotate(radians(frameCount)));
-  fish(translate(475, 550), rotate(radians(frameCount)));
-  fish(translate(450, 550), rotate(radians(frameCount)));
+  fish(-250, 200, rotate(radians(frameCount)));
   pop();
+
+  push();
+  s = random(1) * 3;
+  a = a + random(1, 0) * s;
+  b = b + random(0, -1) * s;
+  translate(a, b);
+  fish(-300, 250, rotate(radians(frameCount)));
+  pop();
+
+  push();
+  s = random(1) * 2;
+  c = c + random(1, 0) * s;
+  d = d + random(0, -1) * s;
+  translate(c, d);
+  fish(-400, 350, rotate(radians(frameCount)));
+  pop();
+
+  push();
+  s = random(1) * -2;
+  m = m + random(1, 0) * s;
+  n = n + random(0, -1) * s;
+  translate(m, n);
+  fish(-700, 650, rotate(radians(frameCount)));
+  pop();
+
+  push();
+  s = random(1) * 3;
+  a = a + random(1, 0) * s;
+  b = b + random(0, -1) * s;
+  translate(a, b);
+  fish(-800, 750, rotate(radians(frameCount)));
+  pop();
+
+  push();
+  c = c + random(1, 0) * s;
+  d = d + random(0, -1) * s;
+  translate(c, d);
+  fish(-300, 650, rotate(radians(frameCount)));
+  pop();
+
+  push();
+  m = m + random(1, 0) * s;
+  n = n + random(0, -1) * s;
+  translate(m, n);
+  fish(-700, 250, rotate(radians(frameCount)));
+  pop();
+
+  push();
+  c = c + random(1, 0) * s;
+  d = d + random(0, -1) * s;
+  translate(c, d);
+  fish(-800, 150);
+  pop();
+
   if (m < -200) {
     m = -200;
     s = random(-1, 1);
@@ -58,6 +111,30 @@ function draw() {
     s = random(-1, 1);
   } else if (n > 800) {
     n = 0;
+    s = random(-1, 1);
+  } else if (a < -200) {
+    m = -200;
+    s = random(-1, 1);
+  } else if (a > 200) {
+    a = -200;
+    s = random(-1, 1);
+  } else if (b < 0) {
+    b = 0;
+    s = random(-1, 1);
+  } else if (b > 800) {
+    b = 0;
+    s = random(-1, 1);
+  } else if (c < -200) {
+    c = -200;
+    s = random(-1, 1);
+  } else if (c > 200) {
+    c = -200;
+    s = random(-1, 1);
+  } else if (d < 0) {
+    d = 0;
+    s = random(-1, 1);
+  } else if (d > 800) {
+    d = 0;
     s = random(-1, 1);
   }
 }

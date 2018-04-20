@@ -1,10 +1,10 @@
-function fish() {
+function fish(locationX, locationY) {
   fill(255, 187, 145);
   stroke(255, 177, 130);
 
   //head
   push();
-  translate(250, 255);
+  translate(locationX, locationY + 5);
   beginShape();
 
   curveVertex(0, 0);
@@ -25,7 +25,7 @@ function fish() {
 
   //eyes
   push();
-  translate(250, 275);
+  translate(locationX, locationY + 25);
   fill(0, 0, 0);
   ellipse(5, -2, 5, 5);
   ellipse(-5, -2, -5, -5);
@@ -33,7 +33,7 @@ function fish() {
 
   //body
   push();
-  translate(250, 268);
+  translate(locationX, locationY + 18);
   noStroke();
 
   ellipse(0, 38, 23, 50);
@@ -41,7 +41,7 @@ function fish() {
 
   //tail fin
   push();
-  translate(250, 195);
+  translate(locationX, locationY - 55);
 
   beginShape();
 
@@ -60,7 +60,7 @@ function fish() {
 
   //fins
   push();
-  translate(250, 255);
+  translate(locationX, locationY + 5);
   triangle(10, 30, 30, 34, 20, 45);
 
   triangle(-10, 30, -30, 34, -20, 45);
